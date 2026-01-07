@@ -1,4 +1,4 @@
-# ESP32 Predictive Environment Monitor
+# IoT-Smart-Environment-Monitoring-System
 
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![Tech](https://img.shields.io/badge/Stack-ESP32%20|%20MQTT%20|%20Python%20|%20ML-blue)
