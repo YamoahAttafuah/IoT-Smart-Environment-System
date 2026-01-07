@@ -7,16 +7,16 @@
 This project is a full-stack IoT system designed to monitor environmental conditions (Temperature, Humidity, Light) and control actuators (fans) using the ESP32 platform. It features a dual-protocol architecture (switching between HTTP and MQTT), a custom backend, and a Linear Regression model to predict environmental trends.
 
 ## System Architecture
-* **Edge Device:** ESP32 running C++ firmware (Station & AP modes).
+* **Edge Device:** ESP32 running C++ firmware (with station and AP modes).
 * **Protocols:** MQTT (PubSubClient) for real-time telemetry, HTTP for bulk data logging.
 * **Backend:** Python script connecting MQTT broker to a PHP/MySQL database.
-* **Analytics:** Jupyter Notebook using Scikit-Learn to analyze sensor correlations and predict temperature spikes.
+* **Analytics:** Python notebook to analyze sensor correlations and predict temperature spikes.
 
 ## Components
 * **Embedded:** C++, Arduino framework, SPIFFS (Flash Memory), OTA Updates.
 * **Connectivity:** WiFi (Station/AP), MQTT, HTTP/REST.
 * **Backend:** Python (Paho-MQTT), PHP, MySQL.
-* **Data Science:** Pandas, Seaborn, Scikit-Learn (Linear Regression).
+* **Data Science:** Pandas, Seaborn, Scikit-Learn (for the Linear Regression model).
 
 ## Key Features
 
