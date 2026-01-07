@@ -1,33 +1,36 @@
 # IoT-Smart-Environment-Monitoring-System
 
 ![Status](https://img.shields.io/badge/Status-Completed-success)
-![Tech](https://img.shields.io/badge/Stack-ESP32%20|%20MQTT%20|%20Python%20|%20ML-blue)
 
 ## Project Overview
-This project is a full-stack IoT system designed to monitor environmental conditions (Temperature, Humidity, Light) and control fans using the ESP32 platform. It features a dual-protocol architecture (switching between HTTP and MQTT), a custom backend, and a Linear Regression model to predict environmental trends.
+A full-stack IoT system for monitoring environmental conditions (Temperature, Humidity, Light) and automatically controlling cooling fans. The ESP32 ollects sensor data, supports dual networking modes (Station and Access Point) and dual communication protocols (HTTP and MQTT), and sends data to a web backend for storage and machine-learning analytics.
 
 ## System Architecture
-* **Edge Device:** ESP32 running C++ firmware (with station and AP modes).
-* **Protocols:** MQTT (PubSubClient) for real-time telemetry, HTTP for bulk data logging.
-* **Backend:** Python script connecting MQTT broker to a PHP/MySQL database.
-* **Analytics:** Python notebook to analyze sensor correlations and predict temperature spikes.
+* **Edge Device:** ESP32 running C++ firmware supporting Station and AP modes.
+* **Protocols:**
+  * MQTT for real-time telemetry
+  * HTTP REST for bulk data upload and synchronization.
+* **Backend:** Python MQTT bridge connected to a PHP/MySQL database supporting the web dashboard.
+* **Analytics:** Python notebook for correlation analysis and temperature prediction.
 
-## Components
-* **Embedded:** C++, Arduino framework, SPIFFS (Flash Memory), OTA Updates.
-* **Connectivity:** WiFi (Station/AP), MQTT, HTTP/REST.
+## Technology Stack
+* **Embedded:** C++, Arduino framework, SPIFFS (Flash Memory), OTA (ArduinoOTA).
+* **Networking:** WiFi (Station/AP), MQTT (PubSubClient), HTTP/REST.
 * **Backend:** Python (Paho-MQTT), PHP, MySQL.
-* **Data Science:** Pandas, Seaborn, Scikit-Learn (for the Linear Regression model).
+* **Data Science:** Pandas, Scikit-Learn Seaborn.
 
 ## Key Features
 
-* **Over-The-Air (OTA) Updates:** Wireless firmware flashing and debugging using ArduinoOTA.
+* **Over-The-Air (OTA) Updates:** Wireless firmware deployment and debugging.
+
+* **Web Dashboard:** For real-time monitoring and remote control
 
 * **Persistent Data Logging:** Sensor data is cached in Flash memory (SPIFFS) if WiFi is lost and bulk-uploaded upon reconnection.
 
-* **Dual-Protocol Communication:** Toggles between MQTT (for real-time telemetry) and HTTP REST (bulk logging) via remote commands.
+* **Dual-Protocol Communication:** Switches dynamically between MQTT (for real-time telemetry) and HTTP REST (bulk logging).
 
-* **Dual-Mode Networking:** Auto-switches between station mode (connecting to router) and access point Mode (acting as a router).
+* **Dual-Mode Networking:** Auto-switches between station mode and access point Mode.
 
-* **Fan Actuation:** Fan actuation based on configurable temperature thresholds or a manual web-interface override.
+* **Smart Fan Control:** Fan actuation based on configurable temperature thresholds or a manual web dashboard override.
 
-* **Predictive Analytics:** A Linear Regression model with a 0.75 R² score in predicting temperature based on humidity and light levels.
+* **Predictive Analytics:** A linear regression model achieving a 0.75 R² score in predicting temperature from humidity and light levels.
