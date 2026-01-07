@@ -4,7 +4,7 @@
 ![Tech](https://img.shields.io/badge/Stack-ESP32%20|%20MQTT%20|%20Python%20|%20ML-blue)
 
 ## Project Overview
-This project is a full-stack IoT system designed to monitor environmental conditions (Temperature, Humidity, Light) and control actuators (Fans) using the **ESP32** platform. It features a dual-protocol architecture (switching between **HTTP** and **MQTT**), a custom backend, and a Linear Regression model to predict environmental trends.
+This project is a full-stack IoT system designed to monitor environmental conditions (Temperature, Humidity, Light) and control actuators (fans) using the ESP32 platform. It features a dual-protocol architecture (switching between HTTP and MQTT), a custom backend, and a Linear Regression model to predict environmental trends.
 
 ## System Architecture
 * **Edge Device:** ESP32 running C++ firmware (Station & AP modes).
@@ -12,7 +12,7 @@ This project is a full-stack IoT system designed to monitor environmental condit
 * **Backend:** Python script connecting MQTT broker to a PHP/MySQL database.
 * **Analytics:** Jupyter Notebook using Scikit-Learn to analyze sensor correlations and predict temperature spikes.
 
-## Tech Stack
+## Components
 * **Embedded:** C++, Arduino framework, SPIFFS (Flash Memory), OTA Updates.
 * **Connectivity:** WiFi (Station/AP), MQTT, HTTP/REST.
 * **Backend:** Python (Paho-MQTT), PHP, MySQL.
