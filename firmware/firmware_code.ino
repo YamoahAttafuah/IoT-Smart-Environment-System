@@ -52,8 +52,8 @@ String ssidAP = "YOUR_AP_SSID"; // modify
 String passwordAP = "";
 String ssid = "YOUR_WIFI_SSID";
 String password = "";
-String serverName = "http://172.20.10.4/iot/final_project/insert.php";
-//String serverName = "http://192.168.2.2/iot/final_project/insert.php";
+String serverName = "http://172.20.10.4/iot/insert.php";
+//String serverName = "http://192.168.2.2/iot/insert.php";
 IPAddress local_ip(192,168,2,1); 
 IPAddress gateway(192,168,2,1); 
 IPAddress subnet(255,255,255,0); 
