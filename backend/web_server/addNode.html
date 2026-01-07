@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Node</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Add or Rename a Smart Object</h1>
+
+<div><p><a href="search.html">Search</a></p></div>
+<p><a href="browse.html">Browse Entries</a></p>
+<p><a href="addNode.html">Add or Rename a Smart Object</a></p></div>
+
+
+<form action="addNode.php" method="post">
+    <div>
+        <label for="request_type">Select option:</label>
+        <select id="request_type" name="request_type">
+            <option value="add">Add new smart object</option>
+            <option value="rename">Rename smart object</option>
+        </select>
+        <div id="add_node_fields" style="display: block;">
+        <label for="node_name">Smart object name:</label>
+        <input type="text" id="node_name" name="node_name" />
+        </div>
+        <div id="rename_node_fields" style="display: none;">
+            <label for="old_node_name">Current smart object name:</label>
+            <input type="text" id="old_node_name" name="old_node_name" />
+            <label for="new_node_name">New smart object name:</label>
+            <input type="text" id="new_node_name" name="new_node_name" />
+        </div>
+    </div>
+    <div><button type="submit">Submit</button></div>
+</form>
+
+<script>
+    var select = document.getElementById('request_type');
+    var newNodeFields = document.getElementById('add_node_fields');
+    var renameNodeFields = document.getElementById('rename_node_fields');
+    select.addEventListener('change', function() {
+        if (this.value == 'add') {
+            newNodeFields.style.display = 'block';
+            renameNodeFields.style.display = 'none';
+        } else {
+            newNodeFields.style.display = 'none';
+            renameNodeFields.style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>

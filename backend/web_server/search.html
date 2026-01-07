@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Search</h1>
+
+<div><p><a href="search.html">Search</a></p></div>
+<p><a href="browse.html">Browse Entries</a></p>
+<p><a href="addNode.html">Add or Rename a Smart Object</a></p></div>
+
+
+<form action="view.php" method="post">
+    <div>
+        <label for="type">Sort by:</label>
+        <select id="request_type" name="request_type">
+            <option value="sensor_name">Sensor Name</option>
+            <option value="smart_object_name">Smart Object Name</option>
+            <option value="location">Location</option>
+            <option value="date">Date</option>
+            <option value="all">All Entries</option>
+        </select>
+        <div id="additional_fields" style="display: block;">
+            <label for="name">Column:</label>
+            <input type="text" id="name" name="name" />
+            <label for="name">Number of Entries:</label>
+            <input type="number" id="quantity" name="quantity" />
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    var select = document.getElementById('request_type');
+    var additionalFields = document.getElementById('additional_fields');
+    select.addEventListener('change', function() {
+        if (this.value !== 'all') {
+            additionalFields.style.display = 'block';
+        } else {
+            additionalFields.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Browse Readings from Database</h1>
+
+<div><p><a href="search.html">Search</a></p></div>
+<p><a href="browse.html">Browse Entries</a></p>
+<p><a href="addNode.html">Add or Rename a Smart Object</a></p></div>
+
+<div id="readings-container"></div>
+<div id="pagination">
+    <button id="prev-page">Previous</button>
+    <span id="page-number">Page 1</span>
+    <button id="next-page">Next</button>
+</div>
+<script>
+    $(document).ready(function() {
+        var currentPage = 1;
+        function loadReadings(page) {
+            $.ajax({
+                url: "browse.php",
+                type: "POST",
+                data: { page: page },
+                success: function(response) {
+                    $("#readings-container").html(response);
+                    $("#page-number").text("Page " + page);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error loading readings:", error);
+                }
+            });
+        }
+        loadReadings(currentPage);
+        $("#prev-page").click(function() {
+            if (currentPage > 1) {
+                currentPage--;
+                loadReadings(currentPage);
+            }
+        });
+        $("#next-page").click(function() {
+            currentPage++;
+            loadReadings(currentPage);
+        });
+    });
+</script>
+</body>
+</html>
