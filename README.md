@@ -3,7 +3,7 @@
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ## Project Overview
-A full-stack IoT system for monitoring environmental conditions (Temperature, Humidity, Light) and automatically controlling cooling fans. The ESP32 collects sensor data, supports dual networking modes (Station and Access Point) and dual communication protocols (HTTP and MQTT), and sends data to a web backend for storage and analytics.
+A full-stack IoT system for monitoring environmental conditions (Temperature, Humidity, Light) and automatically controlling cooling fans. The ESP32 collects sensor data, supports dual networking modes (Station and Access Point), dual communication protocols (HTTP and MQTT), and sends data to a web backend for storage and analytics.
 
 ## System Architecture
 * **Edge Device:** ESP32 running C++ firmware supporting Station and AP modes.
